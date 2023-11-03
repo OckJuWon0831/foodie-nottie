@@ -3,4 +3,10 @@
     <style name="Theme.MyApplication" parent="android:Theme.Material.Light.NoActionBar">
 
     </style>
+    
+    <style name="AuthEditText" parent="android:Widget.EditText">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_margin">20dp</item>
+    </style>
 </resources>
