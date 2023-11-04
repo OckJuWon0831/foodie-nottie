@@ -20,6 +20,7 @@ class JoinActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_join)
+        auth = Firebase.auth
 
         binding.joinBtn.setOnClickListener {
             var joinFlag = true
@@ -73,9 +74,6 @@ class JoinActivity : AppCompatActivity() {
                     }
             }
         }
-
-        auth = Firebase.auth
-
 
     }
 }

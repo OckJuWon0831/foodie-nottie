@@ -50,7 +50,7 @@
                     android:textSize="18sp"
                 />
                 <Button
-                    android:text="Non-membership Login"
+                    android:text="Anonymous user access"
                     android:id="@+id/nonloginBtn"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
