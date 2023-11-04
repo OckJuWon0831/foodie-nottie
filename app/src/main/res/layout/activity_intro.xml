@@ -31,7 +31,7 @@
                     android:id="@+id/loginBtn"
                     android:layout_width="match_parent"
                     android:textStyle="bold"
-                    android:layout_height="60dp"
+                    android:layout_height="40dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/background_radious"
                     android:textColor="@color/black"
@@ -43,18 +43,26 @@
                     android:id="@+id/signinBtn"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="40dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/background_radious"
                     android:textColor="@color/black"
                     android:textSize="18sp"
+                />
+
+                <com.google.android.gms.common.SignInButton
+                        android:id="@+id/googleBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/background_radious"
+                        android:layout_margin="5dp"
                 />
                 <Button
                     android:text="Anonymous user access"
                     android:id="@+id/nonloginBtn"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="40dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/background_radious"
                     android:textColor="@color/black"
