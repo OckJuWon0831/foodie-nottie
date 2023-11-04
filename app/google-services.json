@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "167112497112",
+    "project_id": "foodie-nottie",
+    "storage_bucket": "foodie-nottie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167112497112:android:8ebcedd22da4abdc7484ad",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIu74WAriqvG70h0t8LnScykQrtWIhTtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
