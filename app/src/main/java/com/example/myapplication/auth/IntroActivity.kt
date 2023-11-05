@@ -94,6 +94,5 @@ class IntroActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 }
