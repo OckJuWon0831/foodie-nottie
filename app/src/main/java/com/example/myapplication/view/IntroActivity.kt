@@ -1,4 +1,4 @@
-package com.example.myapplication.auth
+package com.example.myapplication.view
 
 import android.app.Activity
 import android.content.Intent
@@ -7,10 +7,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
-import com.example.myapplication.MainActivity
 import com.example.myapplication.R
+import com.example.myapplication.view.auth.JoinActivity
+import com.example.myapplication.view.auth.LoginActivity
 import com.example.myapplication.databinding.ActivityIntroBinding
-import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -61,7 +61,7 @@ class IntroActivity : AppCompatActivity() {
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)
                     } else {
-                        Toast.makeText(this, "Acess failed", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Access failed", Toast.LENGTH_LONG).show()
                     }
                 }
         }

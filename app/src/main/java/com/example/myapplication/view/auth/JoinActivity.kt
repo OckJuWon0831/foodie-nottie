@@ -1,11 +1,11 @@
-package com.example.myapplication.auth
+package com.example.myapplication.view.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.example.myapplication.MainActivity
+import com.example.myapplication.view.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityJoinBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -56,7 +56,7 @@ class JoinActivity : AppCompatActivity() {
             }
 
             if (password.length < 6) {
-                Toast.makeText(this, "Password must be longer than 6 charachters", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Password must be longer than 6 characters", Toast.LENGTH_LONG).show()
                 joinFlag = false
             }
 

@@ -1,11 +1,11 @@
-package com.example.myapplication.auth
+package com.example.myapplication.view.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.example.myapplication.MainActivity
+import com.example.myapplication.view.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth

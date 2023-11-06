@@ -4,15 +4,14 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MainActivity"
+            tools:context=".view.MainActivity"
             android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/topBar "
-        >
+                android:id="@+id/topBar">
             <ImageView
                     android:src="@drawable/foodie_nottie_logo"
                     android:layout_width="70dp"
@@ -22,22 +21,22 @@
                     app:layout_constraintStart_toStartOf="parent"/>
 
             <ImageView
-                    android:src="@drawable/baseline_home_black_24dp"
-                    android:layout_width="wrap_content"
+                    android:src="@drawable/nottingham_logo"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/home"
-                    app:layout_constraintEnd_toStartOf="@+id/navigation"
+                    android:id="@+id/nottinghamLogo"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginTop="8dp"/>
+                    app:layout_constraintStart_toEndOf="@+id/foodienottieLogo"
+                    android:layout_marginLeft="10dp"/>
 
             <ImageView
-                    android:src="@drawable/baseline_favorite_black_24dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/favorites"
-                    app:layout_constraintEnd_toStartOf="@+id/home"
+                    android:src="@drawable/baseline_search_black_24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="75dp"/>
 
             <ImageView
                     android:src="@drawable/baseline_reorder_black_24dp"
@@ -52,14 +51,24 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="0.5dp"
+                      android:layout_height="1dp"
                       app:layout_constraintTop_toBottomOf="@+id/topBar"
                       android:background="@color/black">
         </LinearLayout>
 
+        <androidx.fragment.app.FragmentContainerView
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:navGraph="@navigation/main_nav"
+                app:defaultNavHost="true"
+                android:id="@+id/fragmentContainerView"
+                android:layout_marginTop="60dp"
+        />
+
         <!--    <Button-->
-    <!--            android:layout_width="wrap_content"-- >
-    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_width="wrap_content"- >
+    <!-            android:layout_height="wrap_content"-->
     <!--            android:id="@+id/logoutBtn"-->
     <!--            android:text="LOGOUT"-->
     <!--            app:layout_constraintEnd_toEndOf="parent"-->
