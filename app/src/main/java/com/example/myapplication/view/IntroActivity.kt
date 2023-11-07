@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
+import com.example.myapplication.BuildConfig
 import com.example.myapplication.R
 import com.example.myapplication.view.auth.JoinActivity
 import com.example.myapplication.view.auth.LoginActivity

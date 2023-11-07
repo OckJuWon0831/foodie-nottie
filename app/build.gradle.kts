@@ -1,8 +1,12 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     // firebase
     id("com.google.gms.google-services")
+    // Secrets gradle plugin
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -40,6 +44,7 @@ android {
         compose = true
         dataBinding = true
         viewBinding = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -60,6 +65,10 @@ dependencies {
 
 //    // Timber logging
 //    implementation ("com.jakewharton.timber:timber:5.0.1")
+
+    // google map sdk & places api
+    implementation ("com.google.android.gms:play-services-maps:18.2.0")
+    implementation ("com.google.android.libraries.places:places:3.2.0")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")

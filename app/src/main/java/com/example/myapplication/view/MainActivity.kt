@@ -3,7 +3,7 @@ package com.example.myapplication.view
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.MainViewModel
+import com.example.myapplication.viewModel.MainViewModel
 import com.example.myapplication.R
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +15,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel.test()
-
     }
 }

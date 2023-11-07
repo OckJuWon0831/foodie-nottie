@@ -21,20 +21,16 @@ class SplashActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         if (auth.currentUser?.uid == null) {
-            Log.d("SplashActivity", "null")
             Handler().postDelayed({
                 startActivity(Intent(this, IntroActivity::class.java))
                 finish()
             }, 1500)
         } else {
-            Log.d("SplashActivity", "not null")
             Handler().postDelayed({
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }, 1500)
          }
-
-
     }
 
 }
