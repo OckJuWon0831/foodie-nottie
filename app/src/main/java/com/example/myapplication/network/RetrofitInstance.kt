@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
-    private const val BASE_URL_PLACES = "https://maps.googleapis.com/maps/api/place/details/"
+    private const val BASE_URL_PLACES = "https://maps.googleapis.com/maps/api/place/details/json"
     private val client = Retrofit
         .Builder()
         .baseUrl(BASE_URL_PLACES)

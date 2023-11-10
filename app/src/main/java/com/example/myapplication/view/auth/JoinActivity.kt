@@ -29,7 +29,6 @@ class JoinActivity : AppCompatActivity() {
             val password = binding.signinPassword.text.toString()
             val password2 = binding.signinPasswordCheck.text.toString()
 
-
             if (name.isEmpty()) {
                 Toast.makeText(this, "Name is required", Toast.LENGTH_LONG).show()
                 joinFlag = false

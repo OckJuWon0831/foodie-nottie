@@ -22,7 +22,6 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         binding.favoriteTap.setOnClickListener {
             Toast.makeText(context, "Clicked favorite tap", Toast.LENGTH_LONG).show()
