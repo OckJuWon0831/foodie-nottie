@@ -10,10 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.provider.Settings
-import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.myapplication.R
+import com.example.myapplication.dto.CurrentCoordinates
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
@@ -62,10 +62,7 @@ class SplashActivity : AppCompatActivity() {
                         if (location == null)
                             Toast.makeText(this, "Cannot get location.", Toast.LENGTH_SHORT).show()
                         else {
-                            val lat = location.latitude
-                            val lon = location.longitude
-                            Log.d("SplashActivity", lat.toString())
-                            Log.d("SplashActivity", lon.toString())
+                            val currentCoordinates = CurrentCoordinates(location.latitude.toString(), location.longitude.toString())
                         }
                     }
             } else {

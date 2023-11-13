@@ -2,9 +2,17 @@ package com.example.myapplication.viewModel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.myapplication.repository.NetworkRepository
+import kotlinx.coroutines.launch
+import timber.log.Timber
 
 class MainViewModel : ViewModel() {
-    fun test() {
-        Log.d("MainViewModel","test")
+
+    private val networkRepository = NetworkRepository()
+
+    fun getNearRestaurantList() = viewModelScope.launch {
+        val restaurant = networkRepository.getNearRestaurantsList()
+        Log.d("MainViewModel", restaurant.status)
     }
 }

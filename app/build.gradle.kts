@@ -62,8 +62,8 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth-ktx")
 
-//    // Timber logging
-//    implementation ("com.jakewharton.timber:timber:5.0.1")
+    // Timber logging
+    implementation ("com.jakewharton.timber:timber:5.0.1")
 
     // google map sdk & places api
     implementation ("com.google.android.gms:play-services-maps:18.2.0")
