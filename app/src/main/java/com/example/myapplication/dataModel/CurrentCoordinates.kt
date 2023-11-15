@@ -1,4 +1,4 @@
-package com.example.myapplication.dto
+package com.example.myapplication.dataModel
 
 data class CurrentCoordinates(
     val latitude: String,

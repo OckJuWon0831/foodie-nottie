@@ -6,6 +6,5 @@ import retrofit2.http.GET
 interface Api  {
 
     @GET("nearbysearch/json?keyword=restaurant&location=2.943836%2C101.873622&radius=2000&type=restaurant&key=AIzaSyDsJtQSz4ogXf8N_y5DfyUw3WAU-U9-hX4")
-    suspend fun getNearRestaurantsList(
-    ) : NearPlaceResponse
+    suspend fun getNearRestaurantsList() : NearPlaceResponse
 }
