@@ -55,16 +55,33 @@
                       app:layout_constraintTop_toBottomOf="@+id/topBar"
                       android:background="@color/black">
         </LinearLayout>
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
 
-        <androidx.fragment.app.FragmentContainerView
-                android:name="androidx.navigation.fragment.NavHostFragment"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mnRestaurantList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:navGraph="@navigation/main_nav"
-                app:defaultNavHost="true"
-                android:id="@+id/fragmentContainerView"
-                android:layout_marginTop="10dp"
-        />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/topBar"
+                app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView"
+                tools:listitem="@layout/main_restaurant_item"
+             />
+
+            <androidx.fragment.app.FragmentContainerView
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:navGraph="@navigation/main_nav"
+                    app:defaultNavHost="true"
+                    android:id="@+id/fragmentContainerView"
+                    android:layout_gravity="center|bottom"
+            />
+
+        </FrameLayout>
+
+
 
         <!--    <Button-->
     <!--            android:layout_width="wrap_content"- >
