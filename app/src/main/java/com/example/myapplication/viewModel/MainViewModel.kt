@@ -29,9 +29,9 @@ class MainViewModel : ViewModel() {
                 val gsonToJson = gson.toJson(restaurant.results[i])
                 val gsonRestuarant = gson.fromJson(gsonToJson, Restuarant::class.java)
                 restaurantsList.add(gsonRestuarant)
-                Log.d("MainViewModel", gsonRestuarant.toString())
+                //Log.d("MainViewModel", gsonRestuarant.toString())
             } catch (e : java.lang.Exception) {
-                Timber.d(e.toString())
+                //Timber.d(e.toString())
             }
         }
 

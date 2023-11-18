@@ -12,7 +12,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:id="@+id/restaurantItem"
+        >
 
         <ImageView
                 android:id="@+id/ivThumbnail"
@@ -39,7 +41,18 @@
                 android:text="Restaurant Name"
                 />
 
-        <ImageView
+            <ImageView
+                    android:src="@drawable/baseline_favorite_black_24dp"
+                    android:id="@+id/ivFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/ivThumbnail"
+                    app:layout_constraintStart_toStartOf="@id/tvTitle"
+                    android:layout_marginStart="170dp"
+                    android:visibility="invisible"
+            />
+
+            <ImageView
                 android:id="@+id/ivStar"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
