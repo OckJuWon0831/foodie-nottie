@@ -4,8 +4,8 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main_nav"
             app:startDestination="@id/homeFragment">
 
-    <fragment android:id="@+id/cartFragment" android:name="com.example.myapplication.view.fragments.CartFragment"
-              android:label="fragment_cart" tools:layout="@layout/fragment_cart"/>
+    <fragment android:id="@+id/cartFragment" android:name="com.example.myapplication.view.fragments.MemoFragment"
+              android:label="fragment_cart" tools:layout="@layout/fragment_memo"/>
     <fragment android:id="@+id/favoriteFragment" android:name="com.example.myapplication.view.fragments.FavoriteFragment"
               android:label="fragment_favorite" tools:layout="@layout/fragment_favorite"/>
     <fragment android:id="@+id/homeFragment" android:name="com.example.myapplication.view.fragments.HomeFragment"

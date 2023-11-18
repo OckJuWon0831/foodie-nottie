@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.dataModel.Restuarant
+import com.example.myapplication.dto.Restuarant
 
 class MainRestaurantAdapter(val context: Context, val restaurantsList : List<Restuarant>)
     :RecyclerView.Adapter<MainRestaurantAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val restuarantName : TextView = view.findViewById(R.id.tvTitle)
+        val restuarantRating : TextView = view.findViewById(R.id.tvScore)
 
     }
 
@@ -28,6 +29,7 @@ class MainRestaurantAdapter(val context: Context, val restaurantsList : List<Res
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.restuarantName.text = restaurantsList[position].name
+        holder.restuarantRating.text = restaurantsList[position].rating.toString()
     }
 
 }

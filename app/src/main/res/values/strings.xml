@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="default_web_client_id">167112497112-uo2suorer2n4csicfiv4sngbo6n3lblt.apps.googleusercontent.com</string>
+    <string name="default_web_client_id">167112497112-uo2suorer2n4csicfiv4sngbo6n3lblt.apps.googleusercontent.com
+    </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

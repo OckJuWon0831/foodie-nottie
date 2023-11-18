@@ -5,8 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.dataModel.Restuarant
-import com.example.myapplication.network.model.NearPlaceResponse
+import com.example.myapplication.dto.Restuarant
 import com.example.myapplication.repository.NetworkRepository
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
