@@ -1,9 +1,8 @@
-package com.example.myapplication.sqlite
+package com.example.myapplication.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.os.Build.VERSION
 
 
 class MemoOpenHelper(context : Context) : SQLiteOpenHelper(context, "memo.db", null, VERSION) {
@@ -18,7 +17,6 @@ class MemoOpenHelper(context : Context) : SQLiteOpenHelper(context, "memo.db", n
                 "write_date char(10) not null" +
                 ");"
         db?.execSQL(query)
-
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

@@ -4,11 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import com.example.myapplication.R
-import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.databinding.ActivityMemoBinding
-import com.example.myapplication.sqlite.MemoOpenHelper
+import com.example.myapplication.db.MemoOpenHelper
 import java.text.SimpleDateFormat
 import java.util.*
 

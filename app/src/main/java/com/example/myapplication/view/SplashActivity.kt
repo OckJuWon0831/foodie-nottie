@@ -13,7 +13,7 @@ import android.provider.Settings
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.myapplication.R
-import com.example.myapplication.dto.CurrentCoordinates
+import com.example.myapplication.dataModels.CurrentCoordinates
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices

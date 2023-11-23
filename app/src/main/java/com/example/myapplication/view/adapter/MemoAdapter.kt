@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.MemoItemBinding
-import com.example.myapplication.dto.Memo
+import com.example.myapplication.dataModels.Memo
 import java.util.*
 
 class MemoAdapter(private var memo: Vector<Memo>, private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -19,7 +19,7 @@ class MemoAdapter(private var memo: Vector<Memo>, private val context: Context) 
         val binding = itemHolder.binding
         val pos = (memo.size - 1) - position
         binding.memoTitleTv.text = memo[pos].title
-        val time = "Written date: " + memo[pos].writeTime
+        val time = "Written date: " + memo[pos].createdDate
         binding.noteDateTv.text = time
 
     }

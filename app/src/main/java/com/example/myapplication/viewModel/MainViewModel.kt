@@ -1,15 +1,13 @@
 package com.example.myapplication.viewModel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.dto.Restuarant
+import com.example.myapplication.dataModels.Restuarant
 import com.example.myapplication.repository.NetworkRepository
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 class MainViewModel : ViewModel() {
 

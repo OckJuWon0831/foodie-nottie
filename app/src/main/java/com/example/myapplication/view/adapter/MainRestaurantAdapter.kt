@@ -1,7 +1,6 @@
 package com.example.myapplication.view.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.dto.Restuarant
+import com.example.myapplication.dataModels.Restuarant
 
 class MainRestaurantAdapter(val context: Context, val restaurantsList : List<Restuarant>)
     :RecyclerView.Adapter<MainRestaurantAdapter.ViewHolder>() {
