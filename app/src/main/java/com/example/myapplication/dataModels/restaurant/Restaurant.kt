@@ -1,8 +1,10 @@
-package com.example.myapplication.dataModels
+package com.example.myapplication.dataModels.restaurant
 
+import com.example.myapplication.dataModels.restaurant.OpeningHours
+import com.example.myapplication.dataModels.restaurant.Photo
 import com.google.gson.annotations.SerializedName
 
-data class Restuarant(
+data class Restaurant(
     @SerializedName("business_status")
     val businessStatus: String,
     @SerializedName("name")

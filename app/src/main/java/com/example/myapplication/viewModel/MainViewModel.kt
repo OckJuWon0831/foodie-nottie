@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.dataModels.Restuarant
+import com.example.myapplication.dataModels.restaurant.Restaurant
 import com.example.myapplication.repository.NetworkRepository
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
@@ -12,9 +12,9 @@ import kotlinx.coroutines.launch
 class MainViewModel : ViewModel() {
 
     private val networkRepository = NetworkRepository()
-    private lateinit var restaurantsList : ArrayList<Restuarant>
-    private val _restaurantsList = MutableLiveData<List<Restuarant>>()
-    val updatedRestaurantList : LiveData<List<Restuarant>>
+    private lateinit var restaurantsList : ArrayList<Restaurant>
+    private val _restaurantsList = MutableLiveData<List<Restaurant>>()
+    val updatedRestaurantList : LiveData<List<Restaurant>>
         get() = _restaurantsList
 
     fun getNearRestaurantList() = viewModelScope.launch {
@@ -25,8 +25,8 @@ class MainViewModel : ViewModel() {
             try {
                 val gson = Gson()
                 val gsonToJson = gson.toJson(restaurant.results[i])
-                val gsonRestuarant = gson.fromJson(gsonToJson, Restuarant::class.java)
-                restaurantsList.add(gsonRestuarant)
+                val gsonRestaurant = gson.fromJson(gsonToJson, Restaurant::class.java)
+                restaurantsList.add(gsonRestaurant)
                 //Log.d("MainViewModel", gsonRestuarant.toString())
             } catch (e : java.lang.Exception) {
                 //Timber.d(e.toString())
