@@ -1,7 +1,5 @@
-package com.example.myapplication.dataModels.restaurant
+package com.example.myapplication.dto.restaurant
 
-import com.example.myapplication.dataModels.restaurant.OpeningHours
-import com.example.myapplication.dataModels.restaurant.Photo
 import com.google.gson.annotations.SerializedName
 
 data class Restaurant(

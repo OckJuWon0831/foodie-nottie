@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.MemoItemBinding
-import com.example.myapplication.dataModels.Memo
+import com.example.myapplication.dto.Memo
 import java.util.*
 
 class MemoAdapter(private var memo: Vector<Memo>, private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

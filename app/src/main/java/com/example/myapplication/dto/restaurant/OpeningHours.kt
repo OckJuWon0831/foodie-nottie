@@ -1,4 +1,4 @@
-package com.example.myapplication.dataModels.restaurant
+package com.example.myapplication.dto.restaurant
 
 import com.google.gson.annotations.SerializedName
 

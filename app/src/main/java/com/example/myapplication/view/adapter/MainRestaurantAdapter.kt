@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.dataModels.restaurant.Restaurant
+import com.example.myapplication.dto.restaurant.Restaurant
 
 class MainRestaurantAdapter(val context: Context, val restaurantsList : List<Restaurant>)
     :RecyclerView.Adapter<MainRestaurantAdapter.ViewHolder>() {

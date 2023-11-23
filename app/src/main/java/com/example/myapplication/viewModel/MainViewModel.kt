@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.dataModels.restaurant.Restaurant
+import com.example.myapplication.dto.restaurant.Restaurant
 import com.example.myapplication.repository.NetworkRepository
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
