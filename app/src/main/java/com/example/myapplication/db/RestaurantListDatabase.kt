@@ -30,8 +30,6 @@ abstract class RestaurantListDatabase : RoomDatabase() {
                 INSTANCE = instance
                 instance
             }
-
         }
-
     }
 }

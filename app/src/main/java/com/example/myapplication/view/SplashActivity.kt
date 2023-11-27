@@ -25,7 +25,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class SplashActivity : AppCompatActivity() {
-
     private lateinit var fusedLocationProviderClient : FusedLocationProviderClient
     private val LOCATION_PERMISSION_REQUEST_CODE = 1001
     private lateinit var auth: FirebaseAuth

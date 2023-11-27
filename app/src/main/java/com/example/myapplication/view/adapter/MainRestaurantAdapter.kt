@@ -1,6 +1,7 @@
 package com.example.myapplication.view.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,17 +38,16 @@ class MainRestaurantAdapter(val context: Context, val restaurantsList : List<Res
         holder.restaurantName.text = restaurantsList[position].name
         holder.restaurantRating.text = restaurantsList[position].rating.toString()
 
-        val currentRestaurant = restaurantsList[position].name
+        val currentRestaurant = restaurantsList[position]
 
         holder.restaurantItem.setOnClickListener {
-            if (!holder.favoriteIcon.isVisible && !selectedRestaurantList.contains(currentRestaurant)) {
+            if (!holder.favoriteIcon.isVisible && !selectedRestaurantList.contains(currentRestaurant.name)) {
                 holder.favoriteIcon.isVisible = true
-                selectedRestaurantList.add(currentRestaurant)
+                selectedRestaurantList.add(currentRestaurant.name)
             } else if (holder.favoriteIcon.isVisible) {
                 holder.favoriteIcon.isVisible = false
-                selectedRestaurantList.remove(currentRestaurant)
+                selectedRestaurantList.remove(currentRestaurant.name)
             }
         }
     }
-
 }

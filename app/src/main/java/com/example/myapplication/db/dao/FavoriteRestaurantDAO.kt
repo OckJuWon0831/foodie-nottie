@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FavoriteRestaurantDAO {
-
     @Query("SELECT * FROM favorite_restaurant_table")
     fun querySelectAllDefault() : Flow<List<FavoriteRestaurantEntity>>
 

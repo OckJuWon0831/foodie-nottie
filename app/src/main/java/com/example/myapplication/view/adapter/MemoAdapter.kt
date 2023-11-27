@@ -8,7 +8,8 @@ import com.example.myapplication.databinding.MemoItemBinding
 import com.example.myapplication.dto.Memo
 import java.util.*
 
-class MemoAdapter(private var memo: Vector<Memo>, private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MemoAdapter(private var memo: Vector<Memo>, private val context: Context)
+    : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val binding = MemoItemBinding.inflate(LayoutInflater.from(context),parent, false)
         return ItemHoder(binding)

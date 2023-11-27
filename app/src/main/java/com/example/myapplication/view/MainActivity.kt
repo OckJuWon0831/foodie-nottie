@@ -5,13 +5,12 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.view.adapter.MainRestaurantAdapter
 import com.example.myapplication.viewModel.MainViewModel
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
-
     private val viewModel : MainViewModel by viewModels()
     private lateinit var mainRestaurantAdapter: MainRestaurantAdapter
     private lateinit var binding : ActivityMainBinding
@@ -27,5 +26,12 @@ class MainActivity : AppCompatActivity() {
             binding.mnRestaurantList.adapter = mainRestaurantAdapter
             binding.mnRestaurantList.layoutManager = LinearLayoutManager(this)
         })
+
+//        // For 2 second
+//        Timer().schedule(object : TimerTask() {
+//            override fun run() {
+//                viewModel.saveSelectedRestaurantList(mainRestaurantAdapter.selectedRestaurantList)
+//            }
+//        }, 1000, 2000)
     }
 }

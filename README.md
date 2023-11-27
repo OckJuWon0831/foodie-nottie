@@ -30,4 +30,4 @@ Android application constructed by Ock Ju Won
 4. validation 로직을 분리할 수 있다.
 다른 내용들은 어느정도 알고 있었다면 이 내용은 미처 생각을 못했는데 유용할 것 같다. 결국 데이터가 들어오는 그 앞단에서 DTO를 통해 검증을 진행할 수 있게 된다는 장점이 있는 것이다.
 
-
+## DAO를 DBRepository에서 한꺼번에 묶어서 사용함

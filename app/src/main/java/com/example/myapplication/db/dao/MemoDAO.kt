@@ -11,6 +11,7 @@ interface MemoDAO {
     @Query("SELECT * FROM memo_table")
     fun querySelectAllDefault(): List<MemoEntity>
 
+    // get based on the created time (last time order)
     @Query("SELECT * FROM memo_table ORDER BY id DESC")
     fun querySelectAllByLast(): List<MemoEntity>
 

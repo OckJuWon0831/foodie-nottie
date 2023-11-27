@@ -60,7 +60,6 @@ data class NearPlaceResponse(
                 @SerializedName("lng")
                 val lng: Double
             )
-
             data class Viewport(
                 @SerializedName("northeast")
                 val northeast: Northeast,
@@ -83,12 +82,10 @@ data class NearPlaceResponse(
                 )
             }
         }
-
         data class OpeningHours(
             @SerializedName("open_now")
             val openNow: Boolean
         )
-
         data class Photo(
             @SerializedName("height")
             val height: Int,
@@ -99,7 +96,6 @@ data class NearPlaceResponse(
             @SerializedName("width")
             val width: Int
         )
-
         data class PlusCode(
             @SerializedName("compound_code")
             val compoundCode: String,

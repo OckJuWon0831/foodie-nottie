@@ -4,7 +4,6 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-
 class MemoOpenHelper(context : Context) : SQLiteOpenHelper(context, "memo.db", null, VERSION) {
     companion object {
         private const val VERSION = 1
