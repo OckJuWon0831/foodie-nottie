@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "314b338e4aa08e6067cc3005f7d445a1",
+    "identityHash": "5c3e8eed2e42e7a28225533f699c94c2",
     "entities": [
       {
         "tableName": "favorite_restaurant_table",
@@ -65,12 +65,56 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "photo_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`photoId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `restaurantReferId` INTEGER NOT NULL, `photoReference` TEXT NOT NULL, `width` INTEGER NOT NULL, `height` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "photoId",
+            "columnName": "photoId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "restaurantReferId",
+            "columnName": "restaurantReferId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "photoReference",
+            "columnName": "photoReference",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "width",
+            "columnName": "width",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "height",
+            "columnName": "height",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "photoId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '314b338e4aa08e6067cc3005f7d445a1')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5c3e8eed2e42e7a28225533f699c94c2')"
     ]
   }
 }

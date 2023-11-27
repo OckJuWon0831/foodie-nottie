@@ -5,6 +5,7 @@ import com.example.myapplication.db.MemoDatabase
 import com.example.myapplication.db.RestaurantListDatabase
 import com.example.myapplication.db.entity.FavoriteRestaurantEntity
 import com.example.myapplication.db.entity.MemoEntity
+import com.example.myapplication.db.entity.PhotoEntity
 
 class DBRepository {
     val context = App.context()
@@ -16,14 +17,17 @@ class DBRepository {
 
     fun getRestaurantSelectedData() = dbOfFavoriteRestaurant.favoriteRestaurantDAO().querySelectedData()
 
-    fun insertRestaurantData(favoriteRestaurantEntity: FavoriteRestaurantEntity) =
-        dbOfFavoriteRestaurant.favoriteRestaurantDAO().insert(favoriteRestaurantEntity)
+    suspend fun insertRestaurantData(favoriteRestaurantEntity: FavoriteRestaurantEntity) =
+        dbOfFavoriteRestaurant.favoriteRestaurantDAO().insertRestaurant(favoriteRestaurantEntity)
 
-    fun updateRestaurantData(favoriteRestaurantEntity: FavoriteRestaurantEntity) =
-        dbOfFavoriteRestaurant.favoriteRestaurantDAO().update(favoriteRestaurantEntity)
+    suspend fun insertPhotoData(photoEntity: PhotoEntity) =
+        dbOfFavoriteRestaurant.favoriteRestaurantDAO().insertPhoto(photoEntity)
 
-    fun deleteRestaurantData(favoriteRestaurantEntity: FavoriteRestaurantEntity) =
-        dbOfFavoriteRestaurant.favoriteRestaurantDAO().delete(favoriteRestaurantEntity)
+    suspend fun deleteRestaurantData(favoriteRestaurantEntity: FavoriteRestaurantEntity) =
+        dbOfFavoriteRestaurant.favoriteRestaurantDAO().deleteRestaurant(favoriteRestaurantEntity)
+
+    suspend fun deletePhotoData(photoEntity: PhotoEntity) =
+        dbOfFavoriteRestaurant.favoriteRestaurantDAO().deletePhoto(photoEntity)
 
     // Memo
     fun getMemoAllData() = dbOfMemo.memoDao().querySelectAllDefault()

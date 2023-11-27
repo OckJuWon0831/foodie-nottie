@@ -2,22 +2,29 @@ package com.example.myapplication.db.dao
 
 import androidx.room.*
 import com.example.myapplication.db.entity.FavoriteRestaurantEntity
+import com.example.myapplication.db.entity.PhotoEntity
+import com.example.myapplication.db.entity.RestaurantWithPhoto
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FavoriteRestaurantDAO {
+    @Transaction
     @Query("SELECT * FROM favorite_restaurant_table")
-    fun querySelectAllDefault() : Flow<List<FavoriteRestaurantEntity>>
+    fun querySelectAllDefault(): Flow<List<RestaurantWithPhoto>>
 
+    @Transaction
     @Query("SELECT * FROM favorite_restaurant_table WHERE selected = :selected")
-    fun querySelectedData(selected : Boolean = true) : List<FavoriteRestaurantEntity>
+    fun querySelectedData(selected: Boolean = true): Flow<List<RestaurantWithPhoto>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(favoriteRestaurantEntity: FavoriteRestaurantEntity)
+    suspend fun insertRestaurant(favoriteRestaurantEntity: FavoriteRestaurantEntity)
 
-    @Update
-    fun update(favoriteRestaurantEntity: FavoriteRestaurantEntity)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertPhoto(photoEntity: PhotoEntity)
 
     @Delete
-    fun delete(favoriteRestaurantEntity: FavoriteRestaurantEntity)
+    suspend fun deleteRestaurant(favoriteRestaurantEntity: FavoriteRestaurantEntity)
+
+    @Delete
+    suspend fun deletePhoto(photoEntity: PhotoEntity)
 }

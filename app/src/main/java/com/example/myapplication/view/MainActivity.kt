@@ -27,11 +27,8 @@ class MainActivity : AppCompatActivity() {
             binding.mnRestaurantList.layoutManager = LinearLayoutManager(this)
         })
 
-//        // For 2 second
-//        Timer().schedule(object : TimerTask() {
-//            override fun run() {
-//                viewModel.saveSelectedRestaurantList(mainRestaurantAdapter.selectedRestaurantList)
-//            }
-//        }, 1000, 2000)
+        binding.nottinghamLogo.setOnClickListener {
+            viewModel.saveSelectedRestaurantList(mainRestaurantAdapter.selectedRestaurantList)
+        }
     }
 }

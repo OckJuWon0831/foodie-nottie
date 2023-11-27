@@ -6,8 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.myapplication.db.dao.FavoriteRestaurantDAO
 import com.example.myapplication.db.entity.FavoriteRestaurantEntity
+import com.example.myapplication.db.entity.PhotoEntity
 
-@Database(entities = [FavoriteRestaurantEntity::class], version = 1)
+@Database(entities = [FavoriteRestaurantEntity::class, PhotoEntity::class], version = 1)
 abstract class RestaurantListDatabase : RoomDatabase() {
     abstract fun favoriteRestaurantDAO() : FavoriteRestaurantDAO
 
