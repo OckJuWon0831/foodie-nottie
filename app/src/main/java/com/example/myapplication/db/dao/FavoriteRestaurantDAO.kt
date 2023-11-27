@@ -19,6 +19,9 @@ interface FavoriteRestaurantDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertRestaurant(favoriteRestaurantEntity: FavoriteRestaurantEntity)
 
+    @Query("SELECT restaurantId FROM favorite_restaurant_table ORDER BY restaurantId DESC LIMIT 1")
+    fun getLatestRestaurantId(): Int
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertPhoto(photoEntity: PhotoEntity)
 

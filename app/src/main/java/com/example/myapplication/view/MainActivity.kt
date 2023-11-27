@@ -1,5 +1,6 @@
 package com.example.myapplication.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -30,5 +31,12 @@ class MainActivity : AppCompatActivity() {
         binding.nottinghamLogo.setOnClickListener {
             viewModel.saveSelectedRestaurantList(mainRestaurantAdapter.selectedRestaurantList)
         }
+
+        viewModel.save.observe(this, Observer {
+            if(it.equals("done")) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+        })
     }
 }

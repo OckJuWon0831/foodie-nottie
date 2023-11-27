@@ -20,7 +20,6 @@ class MainViewModel : ViewModel() {
     private val networkRepository = NetworkRepository()
     private lateinit var restaurantsList : ArrayList<Restaurant>
     private val dbRepository = DBRepository()
-    private var referNum : Int = 0
 
     private val _restaurantsList = MutableLiveData<List<Restaurant>>()
     val updatedRestaurantList : LiveData<List<Restaurant>>
@@ -63,11 +62,13 @@ class MainViewModel : ViewModel() {
             )
             try {
                 if(favoriteRestaurantEntity.selected) {
-                    referNum += 1
+                    favoriteRestaurantEntity.let {
+                        dbRepository.insertRestaurantData(it)
+                    }
                     for (photo in restaurant.photos) {
                         val photoEntity = PhotoEntity(
                             0,
-                            referNum,
+                            dbRepository.getLatestRestaurantId(),
                             photo.photoReference,
                             photo.width,
                             photo.height
@@ -76,9 +77,7 @@ class MainViewModel : ViewModel() {
                             dbRepository.insertPhotoData(it)
                         }
                     }
-                    favoriteRestaurantEntity.let {
-                        dbRepository.insertRestaurantData(it)
-                    }
+
                 }
             } catch (e: java.lang.Exception) {
                 Timber.d(e.toString())

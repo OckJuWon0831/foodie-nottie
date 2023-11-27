@@ -21,13 +21,14 @@
                     app:layout_constraintStart_toStartOf="parent"/>
 
             <ImageView
-                    android:src="@drawable/nottingham_logo"
+                    android:src="@drawable/baseline_check_circle_black_24dp"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/nottinghamLogo"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/foodienottieLogo"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="6dp"/>
 
             <ImageView
                     android:layout_width="wrap_content"
