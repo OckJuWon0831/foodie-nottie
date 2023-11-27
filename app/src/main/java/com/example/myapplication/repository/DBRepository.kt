@@ -10,7 +10,6 @@ import com.example.myapplication.db.entity.PhotoEntity
 class DBRepository {
     val context = App.context()
     private val dbOfFavoriteRestaurant = RestaurantListDatabase.getDatabase(context)
-    private val dbOfMemo = MemoDatabase.getDatabase(context)
 
     // Restaurant
     fun getRestaurantAllData() = dbOfFavoriteRestaurant.favoriteRestaurantDAO().querySelectAllDefault()
@@ -31,14 +30,4 @@ class DBRepository {
     suspend fun deletePhotoData(photoEntity: PhotoEntity) =
         dbOfFavoriteRestaurant.favoriteRestaurantDAO().deletePhoto(photoEntity)
 
-    // Memo
-    fun getMemoAllData() = dbOfMemo.memoDao().querySelectAllDefault()
-
-    fun getSelectAllByLast() = dbOfMemo.memoDao().querySelectAllByLast()
-
-    fun insertMemoData(memoEntity: MemoEntity) = dbOfMemo.memoDao().insert(memoEntity.title, memoEntity.content)
-
-    fun updateMemoData(memoEntity: MemoEntity) = dbOfMemo.memoDao().update(memoEntity)
-
-    fun deleteMemoData(memoEntity: MemoEntity) = dbOfMemo.memoDao().delete(memoEntity)
 }
