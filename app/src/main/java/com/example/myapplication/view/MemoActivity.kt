@@ -2,15 +2,20 @@ package com.example.myapplication.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import android.transition.Slide
+import android.view.Gravity
+import android.view.Window
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMemoBinding
-import com.example.myapplication.db.MemoOpenHelper
+import com.example.myapplication.viewModel.MemoViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
 class MemoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMemoBinding
+    private val viewModel : MemoViewModel by viewModels()
+
 
     private val format = SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH)
 
@@ -19,25 +24,10 @@ class MemoActivity : AppCompatActivity() {
         binding = ActivityMemoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.goMainIv.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+        binding.MainFabButtonFab.setOnClickListener {
+            val intent = Intent(this, WriteActivity::class.java)
             startActivity(intent)
         }
-        binding.addNoteIv.setOnClickListener {
-            val title = binding.titleEt.text
-            val content = binding.todoContentEt.text
 
-            if (title == null && content == null) {
-                Toast.makeText(this, "Insert the title and contents.", Toast.LENGTH_SHORT).show()
-
-            } else {
-                val time = format.format(Date())
-                val db = MemoOpenHelper(this).writableDatabase
-                db.execSQL("insert into memo values (\'$title\', \'$content\', \'$time\')")
-                db.close()
-                Toast.makeText(this, "Memo has been uploaded.", Toast.LENGTH_SHORT).show()
-                onBackPressed()
-            }
-        }
     }
 }

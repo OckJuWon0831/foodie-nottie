@@ -9,11 +9,11 @@ class MemoDBRepository {
     private val dbOfMemo = MemoDatabase.getDatabase(context)
 
     // Memo
-    fun getMemoAllData() = dbOfMemo.memoDao().querySelectAllDefault()
+    fun getMemoAllData() = dbOfMemo.memoDao().querySelectAll()
 
     fun getSelectAllByLast() = dbOfMemo.memoDao().querySelectAllByLast()
 
-    fun insertMemoData(memoEntity: MemoEntity) = dbOfMemo.memoDao().insert(memoEntity.title, memoEntity.content)
+    fun insertMemoData(memoEntity: MemoEntity) = dbOfMemo.memoDao().insert(memoEntity)
 
     fun updateMemoData(memoEntity: MemoEntity) = dbOfMemo.memoDao().update(memoEntity)
 

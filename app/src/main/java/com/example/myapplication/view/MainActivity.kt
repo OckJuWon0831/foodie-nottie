@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainRestaurantAdapter: MainRestaurantAdapter
     private lateinit var binding : ActivityMainBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -31,6 +30,13 @@ class MainActivity : AppCompatActivity() {
             binding.mnRestaurantList.layoutManager = LinearLayoutManager(this)
         })
 
+        viewModel.save.observe(this, Observer {
+            if(it.equals("done")) {
+                val intent = Intent(this, FavoriteActivity::class.java)
+                startActivity(intent)
+            }
+        })
+
         binding.checkbox.setOnClickListener {
             viewModel.saveSelectedRestaurantList(mainRestaurantAdapter.selectedRestaurantList)
         }
@@ -39,12 +45,5 @@ class MainActivity : AppCompatActivity() {
             Firebase.auth.signOut()
             startActivity(Intent(this, IntroActivity::class.java))
         }
-
-        viewModel.save.observe(this, Observer {
-            if(it.equals("done")) {
-                val intent = Intent(this, FavoriteActivity::class.java)
-                startActivity(intent)
-            }
-        })
     }
 }

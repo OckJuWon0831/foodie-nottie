@@ -1,7 +1,6 @@
 package com.example.myapplication.view.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +25,7 @@ class MainRestaurantAdapter(val context: Context, val restaurantsList : List<Res
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.main_restaurant_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.restaurant_item, parent, false)
         return ViewHolder(view)
     }
 
