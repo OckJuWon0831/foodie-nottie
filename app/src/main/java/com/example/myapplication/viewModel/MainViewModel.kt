@@ -14,6 +14,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import timber.log.Timber
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainViewModel : ViewModel() {
 
@@ -29,17 +31,20 @@ class MainViewModel : ViewModel() {
     val save : LiveData<String>
         get() = _saved
 
+    private fun rand(from: Int, to: Int) : Int {
+        return Random().nextInt(to - from) + from
+    }
+
     fun getNearRestaurantList() = viewModelScope.launch {
         val restaurant = networkRepository.getNearRestaurantsList()
         restaurantsList = ArrayList()
 
-        for (i: Int in 0..9) {
+        for (i: Int in rand(0,10)..rand(10,40)) {
             try {
                 val gson = Gson()
                 val gsonToJson = gson.toJson(restaurant.results[i])
                 val gsonRestaurant = gson.fromJson(gsonToJson, Restaurant::class.java)
                 restaurantsList.add(gsonRestaurant)
-//                Timber.d(gsonRestaurant.toString())
             } catch (e: java.lang.Exception) {
                 Timber.d(e.toString())
             }

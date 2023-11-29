@@ -9,12 +9,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.view.adapter.MainRestaurantAdapter
 import com.example.myapplication.viewModel.MainViewModel
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private val viewModel : MainViewModel by viewModels()
     private lateinit var mainRestaurantAdapter: MainRestaurantAdapter
     private lateinit var binding : ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,13 +31,18 @@ class MainActivity : AppCompatActivity() {
             binding.mnRestaurantList.layoutManager = LinearLayoutManager(this)
         })
 
-        binding.nottinghamLogo.setOnClickListener {
+        binding.checkbox.setOnClickListener {
             viewModel.saveSelectedRestaurantList(mainRestaurantAdapter.selectedRestaurantList)
+        }
+
+        binding.logoutBtn.setOnClickListener {
+            Firebase.auth.signOut()
+            startActivity(Intent(this, IntroActivity::class.java))
         }
 
         viewModel.save.observe(this, Observer {
             if(it.equals("done")) {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, FavoriteActivity::class.java)
                 startActivity(intent)
             }
         })

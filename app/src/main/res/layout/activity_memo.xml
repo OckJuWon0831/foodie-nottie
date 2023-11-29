@@ -23,7 +23,6 @@
 
             <ImageView
                     android:id="@+id/goMainIv"
-                    android:contentDescription="@string/app_name"
                     android:src="@drawable/baseline_home_black_24dp"
                     android:scaleType="centerInside"
                     android:layout_width="48dp"
@@ -34,14 +33,13 @@
                     android:paddingEnd="0dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Add note here!"
+                    android:text="Add note by clicking the check box!"
                     android:textColor="@color/black"
                     android:textStyle="bold"/>
             <ImageView
                     android:layout_gravity="end"
                     android:id="@+id/addNoteIv"
-                    android:contentDescription="@string/app_name"
-                    android:src="@drawable/nottingham_logo"
+                    android:src="@drawable/baseline_check_circle_black_24dp"
                     android:scaleType="centerInside"
                     android:layout_width="48dp"
                     android:layout_height="48dp" />

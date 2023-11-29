@@ -24,30 +24,45 @@
                     android:src="@drawable/baseline_check_circle_black_24dp"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nottinghamLogo"
+                    android:id="@+id/checkbox"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/foodienottieLogo"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="6dp"/>
+            <TextView
+                    android:id="@+id/checkboxText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/checkbox"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="Click the check box!"
+
+            />
+            <ImageView
+                    android:id="@+id/logoutBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_logout_black_24dp"
+                    app:layout_constraintEnd_toStartOf="@+id/search_button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="8dp"
+            />
 
             <ImageView
+                    android:id="@+id/search_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/baseline_search_black_24dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="75dp"/>
+                    android:layout_marginEnd="10dp"/>
 
-            <ImageView
-                    android:src="@drawable/baseline_reorder_black_24dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:id="@+id/navigation"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginTop="8dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
