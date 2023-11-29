@@ -9,6 +9,7 @@ Android application constructed by Ock Ju Won
 - Android secret gradle plugin: A Gradle plugin for providing your secrets securely to your Android project.
 - Lifecycle: Lifecycle-aware components perform actions in response to a change in the lifecycle status of another component, such as activities and fragments. These components help you produce better-organized, and often lighter-weight code, that is easier to maintain.
 - Room: For the database and RDBMS functionality
+- Glide: JPG image loading library
 
 ### External APIs
 - Google Map SDK

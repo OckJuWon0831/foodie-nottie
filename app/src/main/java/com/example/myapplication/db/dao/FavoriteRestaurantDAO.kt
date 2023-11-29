@@ -16,11 +16,11 @@ interface FavoriteRestaurantDAO {
     @Query("SELECT * FROM favorite_restaurant_table WHERE selected = :selected")
     fun querySelectedData(selected: Boolean = true): Flow<List<RestaurantWithPhoto>>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertRestaurant(favoriteRestaurantEntity: FavoriteRestaurantEntity)
-
     @Query("SELECT restaurantId FROM favorite_restaurant_table ORDER BY restaurantId DESC LIMIT 1")
     fun getLatestRestaurantId(): Int
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertRestaurant(favoriteRestaurantEntity: FavoriteRestaurantEntity)
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertPhoto(photoEntity: PhotoEntity)

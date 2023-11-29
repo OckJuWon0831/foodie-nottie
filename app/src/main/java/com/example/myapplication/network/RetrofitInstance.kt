@@ -6,13 +6,12 @@ import retrofit2.create
 
 object RetrofitInstance {
     private const val BASE_URL_PLACES = "https://maps.googleapis.com/maps/api/"
-    private val client = Retrofit
-        .Builder()
+    private val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL_PLACES)
-        .addConverterFactory(GsonConverterFactory. create())
+        .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    fun getInstance(): Retrofit {
-        return client
+    fun getApi(): Api {
+        return retrofit.create(Api::class.java)
     }
 }

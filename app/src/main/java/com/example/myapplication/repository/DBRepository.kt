@@ -1,10 +1,8 @@
 package com.example.myapplication.repository
 
 import com.example.myapplication.App
-import com.example.myapplication.db.MemoDatabase
 import com.example.myapplication.db.RestaurantListDatabase
 import com.example.myapplication.db.entity.FavoriteRestaurantEntity
-import com.example.myapplication.db.entity.MemoEntity
 import com.example.myapplication.db.entity.PhotoEntity
 
 class DBRepository {

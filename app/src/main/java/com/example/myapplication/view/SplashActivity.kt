@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.myapplication.R
 import com.example.myapplication.dto.CurrentCoordinates
+import com.example.myapplication.repository.NetworkRepository
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
@@ -23,11 +24,13 @@ import com.google.android.gms.tasks.OnTokenCanceledListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import timber.log.Timber
 
 class SplashActivity : AppCompatActivity() {
     private lateinit var fusedLocationProviderClient : FusedLocationProviderClient
     private val LOCATION_PERMISSION_REQUEST_CODE = 1001
     private lateinit var auth: FirebaseAuth
+    private val networkRepository = NetworkRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +65,7 @@ class SplashActivity : AppCompatActivity() {
                             Toast.makeText(this, "Cannot get location.", Toast.LENGTH_SHORT).show()
                         else {
                             val currentCoordinates = CurrentCoordinates(location.latitude.toString(), location.longitude.toString())
+                            Timber.d(currentCoordinates.toString())
                         }
                     }
             } else {

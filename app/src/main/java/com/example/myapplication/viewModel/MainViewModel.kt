@@ -33,7 +33,7 @@ class MainViewModel : ViewModel() {
         val restaurant = networkRepository.getNearRestaurantsList()
         restaurantsList = ArrayList()
 
-        for (i: Int in 0..10) {
+        for (i: Int in 0..9) {
             try {
                 val gson = Gson()
                 val gsonToJson = gson.toJson(restaurant.results[i])
