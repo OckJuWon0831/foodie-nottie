@@ -67,17 +67,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1" >
-
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/mnRestaurantList"
+            <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintTop_toBottomOf="@id/topBar"
-                    app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView"
-                    tools:listitem="@layout/restaurant_item"
-            />
+                    android:layout_height="match_parent">
 
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mnRestaurantList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/topBar"
+                        app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView"
+                        tools:listitem="@layout/restaurant_item"
+                />
+            </ScrollView>
         </FrameLayout>
         <androidx.fragment.app.FragmentContainerView
                 android:name="androidx.navigation.fragment.NavHostFragment"
