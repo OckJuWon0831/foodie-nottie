@@ -10,8 +10,11 @@ import androidx.databinding.DataBindingUtil
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentNavigationBinding
 import com.example.myapplication.view.FavoriteActivity
+import com.example.myapplication.view.MainActivity
 import com.example.myapplication.view.MemoActivity
 import com.example.myapplication.view.SplashActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class NavigationFragment : Fragment() {
     private lateinit var binding: FragmentNavigationBinding
@@ -26,8 +29,10 @@ class NavigationFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_navigation, container, false)
         binding.homeTap.setOnClickListener {
-            val intent = Intent(requireContext(), SplashActivity::class.java)
-            startActivity(intent)
+            if(Firebase.auth.currentUser?.uid != null) {
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         binding.favoriteTap.setOnClickListener {
