@@ -1,14 +1,18 @@
 package com.example.myapplication.view.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.dto.Memo
+import com.example.myapplication.view.EditMemoActivity
+import com.example.myapplication.view.FavoriteActivity
 import timber.log.Timber
 
 class MemoAdapter(val context: Context, val memoList : List<Memo>)
@@ -34,7 +38,9 @@ class MemoAdapter(val context: Context, val memoList : List<Memo>)
         holder.memoCreatedDate.text = memoList[position].createdDate.toString()
 
         holder.memoItem.setOnClickListener {
-            Timber.d("Memo item is clicked")
+            val intent = Intent(context, EditMemoActivity::class.java)
+            intent.putExtra("memo_dto", memoList[position])
+            context.startActivity(intent)
         }
     }
 }

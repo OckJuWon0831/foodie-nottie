@@ -44,6 +44,20 @@ class MemoViewModel : ViewModel() {
         _memoList.postValue(memoList)
     }
 
+    fun updateMemo(memo : Memo) = viewModelScope.launch(Dispatchers.IO) {
+        try {
+            val memoEntity = MemoEntity(
+                memoRepository.getIdByTitle(memo.title),
+                memo.title,
+                memo.content,
+                memo.createdDate
+            )
+            memoRepository.updateMemoData(memoEntity)
+        } catch (e: java.lang.Exception) {
+            Timber.d(e.toString())
+        }
+    }
+
     fun insertMemo(memo: Memo) = viewModelScope.launch(Dispatchers.IO) {
             try {
                 val memoEntity = MemoEntity(
