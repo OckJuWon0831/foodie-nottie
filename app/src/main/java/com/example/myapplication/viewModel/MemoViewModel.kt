@@ -1,20 +1,15 @@
 package com.example.myapplication.viewModel
 
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.myapplication.db.entity.MemoEntity
 import com.example.myapplication.dto.Memo
-import com.example.myapplication.dto.restaurant.Restaurant
 import com.example.myapplication.repository.MemoDBRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.util.*
 import kotlin.collections.ArrayList
 
 class MemoViewModel : ViewModel() {
@@ -24,6 +19,19 @@ class MemoViewModel : ViewModel() {
     private val _memoList = MutableLiveData<List<Memo>>()
     val updateMemoList : LiveData<List<Memo>>
         get() = _memoList
+
+    private val _memoId = MutableLiveData<Int>()
+    val updateMemoId : LiveData<Int>
+        get() = _memoId
+
+    fun getMemoIdByTitle(title : String) = viewModelScope.launch(Dispatchers.IO) {
+        val id = memoRepository.getIdByTitle(title)
+        try {
+            _memoId.postValue(id)
+        } catch (e: java.lang.Exception) {
+            Timber.d(e.toString())
+        }
+    }
 
     fun getMemoList() = viewModelScope.launch(Dispatchers.IO) {
         val memo = memoRepository.getSelectAllByLast()
@@ -44,10 +52,10 @@ class MemoViewModel : ViewModel() {
         _memoList.postValue(memoList)
     }
 
-    fun updateMemo(memo : Memo) = viewModelScope.launch(Dispatchers.IO) {
+    fun updateMemo(memo : Memo, id : Int) = viewModelScope.launch(Dispatchers.IO) {
         try {
             val memoEntity = MemoEntity(
-                memoRepository.getIdByTitle(memo.title),
+                id,
                 memo.title,
                 memo.content,
                 memo.createdDate
@@ -70,5 +78,19 @@ class MemoViewModel : ViewModel() {
             } catch (e: java.lang.Exception) {
                 Timber.d(e.toString())
             }
+    }
+
+    fun deleteMemo(memo: Memo, id : Int) = viewModelScope.launch(Dispatchers.IO) {
+        try {
+            val memoEntity = MemoEntity(
+                id,
+                memo.title,
+                memo.content,
+                memo.createdDate
+            )
+            memoRepository.deleteMemoData(memoEntity)
+        } catch (e: Exception) {
+            Timber.d(e.toString())
+        }
     }
 }

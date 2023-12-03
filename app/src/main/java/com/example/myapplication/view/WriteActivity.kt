@@ -18,7 +18,6 @@ class WriteActivity : AppCompatActivity() {
     private val formatOfTime = SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH)
     private lateinit var binding : ActivityWriteBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWriteBinding.inflate(layoutInflater)

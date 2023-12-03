@@ -16,7 +16,7 @@ Android application constructed by Ock Ju Won
 - Places API (which is subject to the Map SDK)
 
 ## Functionalities
-1. 
+1. 라이프 사이클을 이용해, 비동기적으로 데이터를 처리할 수 있는 로직 작성
 
 ## Entity와 DTO를 구분해서 사용하는 이유
 1. Entity 구현과 그 자체를 안전하게 숨길 수 있다.(역할의 분리)
