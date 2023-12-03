@@ -31,7 +31,7 @@ class MainViewModel : ViewModel() {
     val save : LiveData<String>
         get() = _saved
 
-    private fun rand(from: Int, to: Int) : Int {
+    fun rand(from: Int, to: Int) : Int {
         return Random().nextInt(to - from) + from
     }
 
