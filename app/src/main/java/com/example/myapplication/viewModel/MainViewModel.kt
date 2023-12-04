@@ -39,7 +39,7 @@ class MainViewModel : ViewModel() {
         val restaurant = networkRepository.getNearRestaurantsList()
         restaurantsList = ArrayList()
 
-        for (i: Int in rand(0,10)..rand(10,40)) {
+        for (i: Int in rand(0,10)..rand(20,40)) {
             try {
                 val gson = Gson()
                 val gsonToJson = gson.toJson(restaurant.results[i])
