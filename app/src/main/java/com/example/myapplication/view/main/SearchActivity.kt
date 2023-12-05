@@ -1,4 +1,4 @@
-package com.example.myapplication.view
+package com.example.myapplication.view.main
 
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -11,7 +11,6 @@ import timber.log.Timber
 
 class SearchActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySearchBinding
-    private lateinit var mainRestaurantAdapter: MainRestaurantAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

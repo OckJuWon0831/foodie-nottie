@@ -7,11 +7,11 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
-import com.example.myapplication.BuildConfig
 import com.example.myapplication.R
 import com.example.myapplication.view.auth.JoinActivity
 import com.example.myapplication.view.auth.LoginActivity
 import com.example.myapplication.databinding.ActivityIntroBinding
+import com.example.myapplication.view.main.MainActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient

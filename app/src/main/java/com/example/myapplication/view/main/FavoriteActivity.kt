@@ -1,12 +1,10 @@
-package com.example.myapplication.view
+package com.example.myapplication.view.main
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityFavoriteBinding
-import com.example.myapplication.databinding.ActivityMainBinding
-import com.example.myapplication.databinding.ActivitySearchBinding
+import com.example.myapplication.view.IntroActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 

@@ -7,7 +7,7 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".view.WriteActivity"
+            tools:context=".view.memo.WriteActivity"
             android:orientation="vertical">
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:background="@color/quantum_yellow50"

@@ -19,19 +19,19 @@
             android:usesCleartextTraffic="true"
             tools:targetApi="31">
         <activity
-                android:name=".view.SearchActivity"
+                android:name=".view.main.SearchActivity"
                 android:exported="false"/>
         <activity
-                android:name=".view.EditMemoActivity"
+                android:name=".view.memo.EditMemoActivity"
                 android:exported="false"/>
         <activity
-                android:name=".view.WriteActivity"
+                android:name=".view.memo.WriteActivity"
                 android:exported="false"/>
         <activity
-                android:name=".view.MemoActivity"
+                android:name=".view.memo.MemoActivity"
                 android:exported="false"/>
         <activity
-                android:name=".view.FavoriteActivity"
+                android:name=".view.main.FavoriteActivity"
                 android:exported="false"/>
         <activity
                 android:name=".view.auth.JoinActivity"
@@ -52,7 +52,7 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".view.MainActivity"
+                android:name=".view.main.MainActivity"
                 android:exported="true"
                 android:theme="@style/Theme.MyApplication">
         </activity>

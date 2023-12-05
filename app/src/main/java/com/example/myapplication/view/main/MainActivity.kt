@@ -1,4 +1,4 @@
-package com.example.myapplication.view
+package com.example.myapplication.view.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,11 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.example.myapplication.view.IntroActivity
 import com.example.myapplication.view.adapter.MainRestaurantAdapter
 import com.example.myapplication.viewModel.MainViewModel
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private val viewModel : MainViewModel by viewModels()

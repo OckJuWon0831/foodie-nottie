@@ -9,10 +9,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentNavigationBinding
-import com.example.myapplication.view.FavoriteActivity
-import com.example.myapplication.view.MainActivity
-import com.example.myapplication.view.MemoActivity
-import com.example.myapplication.view.SplashActivity
+import com.example.myapplication.view.main.FavoriteActivity
+import com.example.myapplication.view.main.MainActivity
+import com.example.myapplication.view.memo.MemoActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
