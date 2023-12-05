@@ -7,13 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.dto.Memo
 import com.example.myapplication.view.EditMemoActivity
-import com.example.myapplication.view.FavoriteActivity
-import timber.log.Timber
 
 class MemoAdapter(val context: Context, val memoList : List<Memo>)
     : RecyclerView.Adapter<MemoAdapter.ViewHolder>() {
