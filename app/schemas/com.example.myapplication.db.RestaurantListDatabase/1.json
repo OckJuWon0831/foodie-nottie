@@ -2,10 +2,10 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "5c3e8eed2e42e7a28225533f699c94c2",
+    "identityHash": "a6254eb2ac411f157f2fb23fad839a1a",
     "entities": [
       {
-        "tableName": "favorite_restaurant_table",
+        "tableName": "restaurant_table",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`restaurantId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `businessStatus` TEXT NOT NULL, `name` TEXT NOT NULL, `placeId` TEXT NOT NULL, `rating` REAL NOT NULL, `userRatingsTotal` INTEGER NOT NULL, `vicinity` TEXT NOT NULL, `selected` INTEGER NOT NULL)",
         "fields": [
           {
@@ -114,7 +114,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5c3e8eed2e42e7a28225533f699c94c2')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a6254eb2ac411f157f2fb23fad839a1a')"
     ]
   }
 }

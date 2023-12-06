@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.SearchView
 import com.example.myapplication.databinding.ActivitySearchBinding
-import com.example.myapplication.view.adapter.MainRestaurantAdapter
 import timber.log.Timber
 
 class SearchActivity : AppCompatActivity() {

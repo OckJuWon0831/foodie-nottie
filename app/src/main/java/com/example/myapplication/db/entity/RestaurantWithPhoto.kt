@@ -4,7 +4,7 @@ import androidx.room.Embedded
 import androidx.room.Relation
 
 data class RestaurantWithPhoto(
-    @Embedded val restaurant: FavoriteRestaurantEntity,
+    @Embedded val restaurant: RestaurantEntity,
     @Relation (
         entity = PhotoEntity::class,
         parentColumn = "restaurantId",

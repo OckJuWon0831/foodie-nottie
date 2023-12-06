@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.db.entity.FavoriteRestaurantEntity
+import com.example.myapplication.db.entity.RestaurantEntity
 import com.example.myapplication.db.entity.PhotoEntity
 import com.example.myapplication.dto.restaurant.Restaurant
 import com.example.myapplication.repository.DBRepository
@@ -55,7 +55,7 @@ class MainViewModel : ViewModel() {
     fun saveSelectedRestaurantList(selectedRestaurantList: ArrayList<String>) = viewModelScope.launch(Dispatchers.IO) {
         for (restaurant in restaurantsList) {
             val selected = selectedRestaurantList.contains(restaurant.name)
-            val favoriteRestaurantEntity = FavoriteRestaurantEntity(
+            val restaurantEntity = RestaurantEntity(
                 0,
                 restaurant.businessStatus,
                 restaurant.name,
@@ -66,8 +66,8 @@ class MainViewModel : ViewModel() {
                 selected
             )
             try {
-                if(favoriteRestaurantEntity.selected) {
-                    favoriteRestaurantEntity.let {
+                if(restaurantEntity.selected) {
+                    restaurantEntity.let {
                         dbRepository.insertRestaurantData(it)
                     }
                     for (photo in restaurant.photos) {

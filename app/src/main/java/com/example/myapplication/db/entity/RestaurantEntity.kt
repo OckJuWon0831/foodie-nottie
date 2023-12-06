@@ -1,11 +1,10 @@
 package com.example.myapplication.db.entity
 
-import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "favorite_restaurant_table")
-data class FavoriteRestaurantEntity(
+@Entity(tableName = "restaurant_table")
+data class RestaurantEntity(
     @PrimaryKey(autoGenerate = true)
     val restaurantId : Int,
     val businessStatus: String,
