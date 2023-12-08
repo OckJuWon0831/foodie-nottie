@@ -1,13 +1,12 @@
 package com.example.myapplication.network
 
-import com.android.volley.toolbox.ImageRequest
 import com.example.myapplication.network.model.NearPlaceResponse
 import okhttp3.ResponseBody
-import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
+import retrofit2.http.Streaming
 
 
 interface Api {
@@ -19,12 +18,4 @@ interface Api {
         @Query("type") type: String,
         @Query("key") apiKey: String
     ): NearPlaceResponse
-
-    @POST("place/photo")
-    suspend fun postImageOfRestaurant(
-        @Query("maxheight") maxheight: Int,
-        @Query("maxwidth") maxwidth: Int,
-        @Query("photo_reference") reference: String,
-        @Query("key") apiKey: String
-    ) : Call<ResponseBody>
 }

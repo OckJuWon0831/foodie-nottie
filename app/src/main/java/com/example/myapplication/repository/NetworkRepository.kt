@@ -1,8 +1,12 @@
 package com.example.myapplication.repository
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import com.example.myapplication.BuildConfig
 import com.example.myapplication.network.RetrofitInstance
 import com.example.myapplication.network.model.NearPlaceResponse
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class NetworkRepository {
     private val api = RetrofitInstance.getApi()
@@ -16,5 +20,4 @@ class NetworkRepository {
 
         return api.getNearRestaurantsList(keyword, location, radius, type, apiKey)
     }
-
 }

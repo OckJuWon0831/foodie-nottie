@@ -9,10 +9,13 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.myapplication.BuildConfig
 import com.example.myapplication.R
 import com.example.myapplication.dto.restaurant.Restaurant
+import timber.log.Timber
 
-class MainRestaurantAdapter(val context: Context, val restaurantsList : List<Restaurant>)
+class MainRestaurantAdapter(val context: Context, val restaurantsList: List<Restaurant>)
     :RecyclerView.Adapter<MainRestaurantAdapter.ViewHolder>() {
 
         val selectedRestaurantList = ArrayList<String>()
@@ -22,6 +25,7 @@ class MainRestaurantAdapter(val context: Context, val restaurantsList : List<Res
         val restaurantRating : TextView = view.findViewById(R.id.tvScore)
         val restaurantItem : ConstraintLayout = view.findViewById(R.id.restaurantItem)
         val favoriteIcon : ImageView = view.findViewById(R.id.ivFavorite)
+        val restaurantImage: ImageView = view.findViewById(R.id.ivThumbnail)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -47,6 +51,21 @@ class MainRestaurantAdapter(val context: Context, val restaurantsList : List<Res
                 holder.favoriteIcon.isVisible = false
                 selectedRestaurantList.remove(currentRestaurant.name)
             }
+        }
+
+        try {
+            val photoReference = currentRestaurant.photos[0].photoReference
+            val api = BuildConfig.GOOGLE_MAP_API_KEY
+            val imageUrl = "https://maps.googleapis.com/maps/api/place/photo" +
+                    "?maxheight=400&maxwidth=400&photoreference=$photoReference&key=$api"
+
+            Glide.with(context)
+                .load(imageUrl)
+                .centerCrop()
+                .placeholder(R.drawable.restaurant)
+                .into(holder.restaurantImage)
+        } catch (e: java.lang.Exception) {
+            Timber.d(e.toString())
         }
     }
 }
