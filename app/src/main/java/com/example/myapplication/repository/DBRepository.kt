@@ -16,6 +16,8 @@ class DBRepository {
 
     fun getLatestRestaurantId() = dbOfFavoriteRestaurant.favoriteRestaurantDAO().getLatestRestaurantId()
 
+    fun getPhotoReference(restaurantId: Int) = dbOfFavoriteRestaurant.favoriteRestaurantDAO().getPhotoReference(restaurantId)
+
     suspend fun insertRestaurantData(restaurantEntity: RestaurantEntity) =
         dbOfFavoriteRestaurant.favoriteRestaurantDAO().insertRestaurant(restaurantEntity)
 

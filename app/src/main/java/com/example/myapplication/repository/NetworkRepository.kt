@@ -16,4 +16,5 @@ class NetworkRepository {
 
         return api.getNearRestaurantsList(keyword, location, radius, type, apiKey)
     }
+
 }

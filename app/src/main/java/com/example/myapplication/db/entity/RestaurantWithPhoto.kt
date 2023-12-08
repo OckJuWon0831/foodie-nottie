@@ -10,5 +10,5 @@ data class RestaurantWithPhoto(
         parentColumn = "restaurantId",
         entityColumn = "restaurantReferId"
     )
-    val photo: List<PhotoEntity>
+    val photo: PhotoEntity
 )

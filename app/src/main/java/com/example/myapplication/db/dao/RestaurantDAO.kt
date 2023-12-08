@@ -19,6 +19,9 @@ interface RestaurantDAO {
     @Query("SELECT restaurantId FROM restaurant_table ORDER BY restaurantId DESC LIMIT 1")
     fun getLatestRestaurantId(): Int
 
+    @Query("SELECT photoReference FROM photo_table WHERE restaurantReferId=:id")
+    fun getPhotoReference(id : Int): String
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertRestaurant(restaurantEntity: RestaurantEntity)
 
