@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class CurrentCoordinates(
     @SerializedName("latitude")
-    val latitude: String,
+    var latitude: String,
     @SerializedName("longitude")
-    val longitude: String
+    var longitude: String
 )

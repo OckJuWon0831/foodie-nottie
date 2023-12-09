@@ -25,6 +25,9 @@ import com.google.android.gms.tasks.OnTokenCanceledListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class SplashActivity : AppCompatActivity() {
@@ -66,7 +69,7 @@ class SplashActivity : AppCompatActivity() {
                             Toast.makeText(this, "Cannot get location.", Toast.LENGTH_SHORT).show()
                         else {
                             val currentCoordinates = CurrentCoordinates(location.latitude.toString(), location.longitude.toString())
-                            Timber.d(currentCoordinates.toString())
+                            NetworkRepository.setCoordinates(currentCoordinates)
                         }
                     }
             } else {
