@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide
 import com.example.myapplication.BuildConfig
 import com.example.myapplication.R
 import com.example.myapplication.db.entity.RestaurantWithPhoto
-import timber.log.Timber
 
 class FavoriteRestaurantAdapter(val context : Context, val dataset: List<RestaurantWithPhoto>)
     :RecyclerView.Adapter<FavoriteRestaurantAdapter.ViewHolder>() {
@@ -22,13 +21,11 @@ class FavoriteRestaurantAdapter(val context : Context, val dataset: List<Restaur
             val restaurantTotalRate = view.findViewById<TextView>(R.id.tvUserRatingsTotal)
             val restaurantVicinity = view.findViewById<TextView>(R.id.tvVicinity)
             val restaurantImage: ImageView = view.findViewById(R.id.ivThumbnail)
-
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.favorite_restaurant_item, parent, false)
         return  ViewHolder(view)
-
     }
 
     override fun getItemCount(): Int {
