@@ -31,7 +31,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/foodienottieLogo"
                     app:layout_constraintEnd_toStartOf="@+id/logoutBtn"
-                    android:textSize="20dp"
+                    android:textSize="30dp"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:textColor="@color/black"
@@ -43,18 +43,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:src="@drawable/baseline_logout_black_24dp"
-                    app:layout_constraintEnd_toStartOf="@+id/search_button"
-                    app:layout_constraintTop_toTopOf="parent"
-            />
-
-            <ImageView
-                    android:id="@+id/search_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/baseline_search_black_24dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginEnd="10dp"/>
+            />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

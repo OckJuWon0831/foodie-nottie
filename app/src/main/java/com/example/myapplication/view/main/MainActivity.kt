@@ -37,11 +37,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        binding.searchButton.setOnClickListener {
-            val intent = Intent(this, SearchActivity::class.java)
-            startActivity(intent)
-        }
-
         binding.checkbox.setOnClickListener {
             viewModel.saveSelectedRestaurantList(mainRestaurantAdapter.selectedRestaurantList)
         }

@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 class FavoritesViewModel : ViewModel() {
 
     private val dbRepository = DBRepository()
-    private val networkRepository = NetworkRepository()
     lateinit var selectedRestaurantList: LiveData<List<RestaurantWithPhoto>>
 
     fun getAllInterestedRestaurants() = viewModelScope.launch {

@@ -39,11 +39,6 @@ class FavoriteActivity : AppCompatActivity() {
             binding.mnFavoriteRestaurantList.layoutManager = LinearLayoutManager(this)
         })
 
-        binding.searchButton.setOnClickListener {
-            val intent = Intent(this, SearchActivity::class.java)
-            startActivity(intent)
-        }
-
         binding.logoutBtn.setOnClickListener {
             Firebase.auth.signOut()
             startActivity(Intent(this, IntroActivity::class.java))
