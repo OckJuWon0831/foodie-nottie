@@ -19,9 +19,6 @@
             android:usesCleartextTraffic="true"
             tools:targetApi="31">
         <activity
-                android:name=".view.main.SearchActivity"
-                android:exported="false"/>
-        <activity
                 android:name=".view.memo.EditMemoActivity"
                 android:exported="false"/>
         <activity
