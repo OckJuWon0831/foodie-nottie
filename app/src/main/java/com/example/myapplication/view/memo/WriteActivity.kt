@@ -12,7 +12,6 @@ import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 class WriteActivity : AppCompatActivity() {
     private val viewModel: MemoViewModel by viewModels()
     private val formatOfTime = SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH)
