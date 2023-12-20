@@ -6,9 +6,6 @@ Android application built with Kotlin, showing the restarants nearby the UNMC, a
 
 Based on the coordinates of the location given, the application communicates with the external API(Google Map & Places API) to request GET request for JSON data.
 
-## 🧐 How to Run?
-
-
 ## 📚 Stack
 
 Language: Kotlin
@@ -37,9 +34,6 @@ Glide: JPG image loading library
 ## 🚀 External APIs
 - Google Map SDK
 - Places API (which is subject to the Map SDK)
-
-## ✨ Functionalities
-### 1. 라이프 사이클을 이용해, 비동기적으로 데이터를 처리할 수 있는 로직 작성
 
 ## 🔗 References
 - 🔎 [Wiki - Foodie Nottie!](https://github.com/OckJuWon0831/foodie-nottie/wiki)
