@@ -35,6 +35,15 @@ Glide: JPG image loading library
 - Google Map SDK
 - Places API (which is subject to the Map SDK)
 
-## 🔗 References
-- 🔎 [Wiki - Foodie Nottie!](https://github.com/OckJuWon0831/foodie-nottie/wiki)
+## 🏛️ Architecture of Foodie Nottie!
+
+![ss](https://github.com/OckJuWon0831/foodie-nottie/assets/114837587/ac0e87de-773b-4711-ab8d-367a4c1787fc)
+
+## 📝 DB ERD
+<img width="969" alt="erd" src="https://github.com/OckJuWon0831/foodie-nottie/assets/114837587/26232682-a592-4299-adfb-56fe33555418">
+
+## 🔗 Conducted by...
+### BSc (Hons) Computer Science with Artificial Intelligence
+
+### Ock Ju Won
 
