@@ -38,8 +38,3 @@ Glide: JPG image loading library
 ## 🔗 References
 - 🔎 [Wiki - Foodie Nottie!](https://github.com/OckJuWon0831/foodie-nottie/wiki)
 
-- 🔎 [Network - Foodie Nottie!](https://github.com/OckJuWon0831/foodie-nottie/wiki/%F0%9F%9B%9C-Network-%E2%80%90-Foodie-Nottie!)
-
-- 🔎 [Database - Foodie Nottie!](https://github.com/OckJuWon0831/foodie-nottie/wiki/%F0%9F%A7%91%E2%80%8D%F0%9F%92%BB-Database-%E2%80%90-Foodie-Nottie!)
-
-- 🔎 [Software Engineering - Foodie Nottie! About JVM & Kotlin perspective](https://github.com/OckJuWon0831/foodie-nottie/wiki/%F0%9F%9A%80-JVM-and-Kotlin)
